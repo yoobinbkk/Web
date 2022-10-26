@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_html5_form</title>
+</head>
+<body>
+
+<form> <!-- method = 'post' 사용 -->
+
+<fieldset>
+	<legend> 로그인 정보 </legend>
+	<ol>
+		<li>
+			<label for='id'>아이디</label>
+			<input type='text' id='id' class='id' name='id'>
+		</li>
+		<li>
+			<label for='pass'>비밀번호</label>
+			<input type='password' name='pass'>
+		</li>
+		<li>
+			<label for='pass2'>비밀번호 확인</label>
+			<input type='password' name='pass2'>
+		</li>
+		<li>
+			<label for='grade'>회원 등급</label>
+			<input type='text' name='grade' value='준회원'>
+		</li>
+	</ol>
+</fieldset>
+
+<fieldset>
+	<legend> 개인 정보 </legend>
+	<ol>
+		<li>
+			<label for='name'>이름</label>
+			<input type='text' name='name' placeholder='5자미만 공백없이'>
+		</li>
+		<li>
+			<label for='mail'>메일 주소</label>
+			<input type='email' name='mail' placeholder='abcd@domain.com'>
+		</li>
+		<li>
+			<label for='phone'>연락처</label>
+			<input type='tel' name='phone'>
+		</li>
+		<li>
+			<label for='birthday'>생일</label>
+			<input type='date' name='birthday' value='연도-월-일'>
+		</li>
+	</ol>
+</fieldset>
+
+<fieldset>
+	<legend> 코인 숙련도(상,중,하) </legend>
+	<ol>
+		<li>
+			<input type='range' min="0" max="100" value="50" step="50"/>
+		</li>
+	</ol>
+</fieldset>
+
+<fieldset>
+	<input type = 'submit'>
+</fieldset>
+
+</form>
+
+</body>
+</html>

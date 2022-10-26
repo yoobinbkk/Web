@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 폼 예제 2</title>
+</head>
+<script type="text/javascript">
+	
+	window.onload = function() {
+		
+		let idx = frm.play.selectedIndex;
+		let optSel = frm.play.options;
+		
+		document.getElementById('up').onclick = function() {
+			
+			// alert(idx);
+			
+			if(idx > 0) {
+				let temp = optSel[idx].text;
+				optSel[idx].text = optSel[idx-1].text;
+				optSel[idx-1].text = temp;
+				optSel[idx-1].selected = true;
+			} 
+			
+			/* else if (idx == 0) {
+				let temp = optSel[idx].text;
+				for (let i=1 ; i<6 ; i++) {
+					optSel[i-1].text = optSel[i].text;
+				}
+				optSel[6].text = temp;
+				optSel[6].selected = true;
+			} */
+		}
+		
+		document.getElementById('down').onclick = function() {
+
+			if(idx < 5) {
+				let temp = optSel[idx].text;
+				optSel[idx].text = optSel[idx+1].text;
+				optSel[idx+1].text = temp;
+				optSel[idx+1].selected = true;
+			} 
+			
+			/* else if (idx == 6) {
+				let temp = optSel[idx].text;
+				for (let i=6 ; i>0 ; i--) {
+					optSel[i].text = optSel[i-1].text;
+				}
+				optSel[0].text = temp;
+				optSel[0].selected = true;
+			} */
+			
+		}
+		
+		
+		
+	}
+	
+</script>
+<body>
+
+내가 제일 좋아하는 놀이 순서대로 한다면 <br>
+
+<form name="frm">
+<select name="play" size="6">
+	<option selected> 숨쉬기 </option>
+	<option> 밥먹기 </option>
+	<option> 그냥있기 </option>
+	<option> 잠자기 </option>
+	<option> 술먹기 </option>
+	<option> 멍때리기 </option>
+</select> <br>
+
+<input type="button" id='up'	value="▲"><br><br>
+<input type="button" id='down'	value="▼"><br><br>
+</form>
+
+</body> 
+</html>

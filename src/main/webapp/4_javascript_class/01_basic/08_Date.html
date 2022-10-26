@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date 객체</title>
+<script type="text/javascript">	
+ 	
+	let d = new Date('2023/08/13');
+	document.writeln( d  + '<br/>');
+	document.writeln( d.getYear()  + '<br/>');			// 꼭 fullyear로 출력!
+	document.writeln( d.getFullYear()  + '<br/>');
+	document.writeln( d.getMonth()  + '<br/>');			// 영어권에서는 0부터 시작해서 +1 필요함 (달만)
+	document.writeln( d.getDate()  + '<br/>');
+	document.writeln( d.getDay()  + '<br/>');			// 주일부터 0
+	
+	document.writeln('<br/>');
+
+	let today = new Date();
+	document.writeln( today + '<br/>');
+	document.writeln( today.toLocaleString() + '<br/>');
+	document.writeln( today.toGMTString() + '<br/>');
+	document.writeln( today.toDateString() + '<br/>');
+	
+	document.writeln('<br/>');
+	
+	// 2025-05-12
+	let day = new Date();
+	day.setFullYear(2025);
+	day.setMonth(5-1);				// -1
+	day.setDate(12);
+	document.writeln( day + '<br/>');
+	document.writeln( day.toDateString() + '<br/>');
+	
+	document.writeln('<br/>');
+	
+	let a = new Date();
+	a.setMonth( a.getMonth() - 3);
+	document.writeln( a.toDateString() + '<br/>');
+	
+	a.setDate( a.getDate() + 20);
+	document.writeln( a.toDateString() + '<br/>');
+	
+	a.setDate(0);
+	document.writeln( a.toDateString() + '<br/>');
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

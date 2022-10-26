@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form name='frm'>
+	<input type='text' name='city' />
+	<br/><br/>
+	<input type='radio' name='dong' value='가산' /> 가산 <br/>
+	<input type='radio' name='dong' value='판교' /> 판교 <br/>
+	<input type='radio' name='dong' value='부평' /> 부평 <br/>
+	
+	<script type="text/javascript">
+	
+	var sel = frm.dong;
+	for (var i of sel) {
+		i.onclick = function() {
+			opener.frm.dong.value = frm.dong.value;
+		}
+	}
+		
+	</script>
+	
+</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form name='frm'>
+	<select name='city'>
+		<option selected>서울시</option>
+		<option>경기도</option>
+		<option>부산시</option>
+	</select>
+	<br/><br/>
+	<input type='text' name='dong' />
+	
+	<script type="text/javascript">
+	
+		dongView = window.open("9_dong.html", "dongView", "width=500, height=600");
+		
+		let optSel = frm.city;
+		
+		optSel.onchange = function() {
+			dongView.frm.city.value = this.value;
+		}
+		
+		/* for (let i of optSel) {
+			i.onchange = function() {
+				dongView.frm.city.value = this.text;
+			}
+		} */
+		
+	</script>
+	
+</form>
+</body>
+</html>

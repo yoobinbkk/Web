@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Javascript 객체지향 </title>
+	<script>
+
+		/*
+			이름, 국어점수, 영어점수, 수학점수를 저장하고
+			해당 클래스 안에는 국,영,수를 총점을 구하는 함수를 가진
+			클래스 Student 선언
+		*/
+		
+		function Student(name, kor, eng, math) {
+			this.name = name;
+			this.kor = kor;
+			this.eng = eng;
+			this.math = math;
+			
+			this.sum = function() {
+				return kor + eng + math;
+			}
+		}
+		
+		//*
+		// 자바스크립트의 클래스는 동적인 추가
+		
+		// 한 객체에만 적용
+		/* s1.showInfo = function(){
+			return (this.name + ' : ' + this.sum() + '<br/>')
+		} */
+		
+		// 클래스 밖에서 함수를 선언하려면 이렇게 해야 한다.
+		/* Student.prototype.sum = function() {
+			return this.kor + this.eng + this.math;
+		} */
+		/* Student.prototype.showInfo = function(){
+			return (this.name + ' : ' + this.sum() + '<br/>')
+		} */
+		
+		Student.prototype = {
+			showInfo	: showInfo = function(){
+						  return (this.name + ' : ' + this.sum() + '<br/>')},
+			sum			: sum = function() {
+						  return this.kor + this.eng + this.math;}
+		}
+		
+		var s1 = new Student('홍길동', 80, 80, 70);
+		document.write(s1.name + "님 " + s1.sum() + '<br/>');
+
+		var s2 = new Student('임라토', 90, 70, 80);
+		document.write(s2.name + "님 " + s2.sum() + '<br/>');
+		
+		document.write(s1.showInfo());
+		document.write(s2.showInfo());		// 홍길자는 ???
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

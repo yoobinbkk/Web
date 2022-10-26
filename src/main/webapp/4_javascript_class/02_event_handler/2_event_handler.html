@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 핸들러 연결 </title>
+	<script type="text/javascript">
+	
+	// 화면이 띄워졌을 때
+	window.onload = function() {
+		
+		var btn = document.getElementById('btn');
+		btn.onclick = function() {
+			alert('버튼 클릭');
+		}
+		
+	}
+	
+	</script>
+</head>
+ <body>
+	<input type='button' value='눌러'  id='btn' />
+	
+	<!-- 여기에 적어야 화면에 띄워진 것을 인식하고 나서 함수를 실행시킬 수 있다. -->
+
+	
+</body>
+</html>
