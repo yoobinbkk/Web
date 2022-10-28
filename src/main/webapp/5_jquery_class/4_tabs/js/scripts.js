@@ -12,6 +12,7 @@ $(function(){
 	lastPanel.show();
 	
 	anchors.click(function(){
+		
 		let currentAnchor = $(this);
 		let currentPanel = $(currentAnchor.attr('href'));
 		

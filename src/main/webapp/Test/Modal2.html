@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Modal2 Test</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		
+		$("tr.option1 input:radio[name='hot_cold']").click(function(){
+			hotCold = $(this).val();
+			alert(hotCold);
+		});
+		
+		$("tr.size input:radio[name='size']").click(function(){
+			sizeP = Number($(this).val());
+			alert(sizeP);
+		});
+		
+		$("tr.option2 input:radio[name='syrup']").click(function(){
+			syruP = Number($(this).val());
+			alert(syruP);
+		});
+		
+		$("tr.option3 input:radio[name='shot']").click(function(){
+			shotP = Number($(this).val());
+			alert(shotP);
+		});
+		
+	});
+
+</script>
+
+</head>
+<body>
+
+<div id="ex1" class="modal">
+  <table class="optiontbl">
+          <tr id="optiontitle">
+            <th colspan=4 id="opt_titleText">O P T I O N</th>
+          </tr>
+          <tr class="option1">
+            <td >HOT/COLD</td>
+            <td id='hot' class='hot'>
+              <img src="./images/hot.png" class='image' /><br/>
+              <span id="label1" value='따뜻한 음료'>따뜻한 음료</span><br/>
+              <input type='radio' name='hot_cold' value='Hot' checked="checked">+0원
+              <br/>
+            </td>
+            <td id='ice' class='ice'>
+              <img src="./images/ice.png" class='image' /> <br/>
+              <span id="label2" value ='차가운 음료'>차가운 음료</span><br/>
+              <input type='radio' name='hot_cold' value='Cold'>+0원
+            </td>
+            
+          <tr class="size">
+            <td>사이즈 선택</td>
+            <td id='small' class='small'>
+              <img src="./images/s.png" class='image' /><br/>
+              <span id="label4" value='samll'>small</span><br/>
+              <input type='radio' name='size' value='-500'>-500원
+              <br/>
+            </td>
+            <td id='medium' class='medium'>
+              <img src="./images/m.png" class='image' /><br/>
+              <span id="label5" value='medium'>medium</span><br/>
+              <input type='radio' name='size' value='0' checked>+0원
+            </td>
+            <td id='large' class='large'>
+              <img src="./images/l.png" class='image' /><br/>
+              <span id="label6" value='large'>large</span><br/>
+              <input type='radio' name='size' value='500'>+500원
+            </td>
+          </tr>
+          
+          <tr class="option2">
+            <td>시럽 추가</td>
+            <td id='vanilla' class='vanilla'>
+              <img src="./images/syrup.png" class='image' /><br/>
+              <span id="syrup1" value='바닐라시럽'>바닐라시럽</span><br/>
+               <input type='radio' name='syrup' value='300'>+300원
+            </td>
+            <td id='hazelnut' class='hazelnut'>
+              <img src="./images/macadamia.png" class='image' /><br/>
+              <span id="syrup2" value='헤이즐넛시럽'>헤이즐넛시럽</span><br/>
+              <input type='radio' name='syrup' value='300'>+300원
+            </td>
+            <td id='none' class='none'>
+              <img src="./images/none.png" class='image' /><br/>
+              <span id="none1" value='추가없음'>추가없음</span><br/>
+              <input type='radio' name='syrup' value='0' checked>+0원
+          </tr>
+          
+          <tr class="option3">
+            <td>샷추가 추가</td>
+            <td id='shot' class='shot'>
+              <img src="./images/shot(1).png" class='image' /><br/>
+              <span id="aShot" value='샷추가'>샷추가</span><br/>
+              <input type='radio' name='shot' value='400'>+400원
+            </td>
+            <td id='none' class='none'>
+              <img src="./images/none.png" class='image' /><br/>
+              <span id="noShot" value='추가없음'>추가없음</span><br/>
+              <input type='radio' name='shot' value='0' checked>+0원
+          </tr>
+          <input id="damgi" type="button" value="담기">
+          
+        </table>
+</div>
+ 
+<p><a href="#ex1" rel="modal:open">모달창띄우기</a></p>
+
+</body>
+</html>

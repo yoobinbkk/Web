@@ -11,6 +11,33 @@
 
   <script type="text/javascript">
 
+  	$(function(){
+  		
+  		// 쿠기처럼 임시로 저장되는 것이 아니라 화면을 꺼도 저장된다. (jStorage)
+  		
+  		// jStorage에 저장된 값을 얻어서 화면에 출력
+  		$('#name').val($.jStorage.get('name'));
+  		$('#memo').val($.jStorage.get('memo'));
+  		
+  		$('#set').click(function(){
+  			
+  			var n = $('#name').val();
+  			var m = $('#memo').val();
+  			
+  			$.jStorage.set('name', n);
+  			$.jStorage.set('memo', m);
+  			
+  		});
+  		
+  		// del
+  		$('#del').click(function(){
+  			$.jStorage.deleteKey('name');
+  			$.jStorage.deleteKey('memo');
+  			location.reload();					// 페이지 새로고침
+  		});
+  		
+  	});
+  
   </script>
 </head>
 <body>

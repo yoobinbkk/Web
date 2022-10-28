@@ -1,77 +1,91 @@
 $(function(){
-
-	const body = document.querySelector('body');
-      const modal = document.querySelector('.modal');
-      const btnOpenPopup = document.querySelector('.btn-open-popup');
-
-      btnOpenPopup.addEventListener('click', () => {
-        modal.classList.toggle('show');
-
-        if (modal.classList.contains('show')) {
-          body.style.overflow = 'hidden';
-        }
-      });
-
-      modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-          modal.classList.toggle('show');
-
-          if (!modal.classList.contains('show')) {
-            body.style.overflow = 'auto';
-          }
-        }
-      });
 	
+	let count = 0;
 	
-
-	var oriPrice;
-	var nameV;
+	let ifrm = $('div#here > iframe').contents();
+	
+	let oriPrice = null;
+	let name = null;
+	
+	let hotCold = ifrm.find("tr.option1 input:radio[name='hot_cold']:checked").val();
+	let sizeP = Number(ifrm.find("tr.size input:radio[name='size']:checked").val());
+	let syruP = Number(ifrm.find("tr.option2 input:radio[name='syrup']:checked").val());
+	let shotP = Number(ifrm.find("tr.option3 input:radio[name='shot']:checked").val());
 	
 	$('.menu > img').click(function(){
 		
-		modal.classList.toggle('show');
-
-		if (modal.classList.contains('show')) {
-			body.style.overflow = 'hidden';
+		// alert($(this).parent().find('span:eq(1)').attr('value'));
+		
+		if(count<1){
+			// $('#here').append("<iframe src='./menu_option.html' title='menu' height='950' width='800' style='border:none;'></iframe>")
+			count++;
+		} else {
+			$('#here').show();
 		}
 		
-		oriPrice 	= 	$(this).parent().find('span:eq(1)').attr('value');
-		nameV 		= 	$(this).parent().find('span:eq(0)').attr('value');
+		oriPrice = Number($(this).parent().find('span:eq(1)').attr('value'));
+		name = $(this).parent().find('span:eq(0)').attr('value');
 		
-		$('span#priceCenter').text(oriPrice + "원");
-
 	});
-
-	var hotCold = $('.hot/ice > img');
-	var size = $('.sml > img');
-	var syrup = $('.syrup > img');
-	var shot = $('.shot > img');
-
-	var hotColdV = hotCold.parent().find('span:eq(1)').attr('value');
-	var sizeP = size.parent().find('span:eq(1)').attr('value');
-	var syruP = syrup.parent().find('span:eq(1)').attr('value');
-	var shotP = shot.parent().find('span:eq(1)').attr('value');
-
-	hotCold.click(function(){
-		hotColdV = $(this).find('span:eq(1)').attr('value');
-		alert(hotColdV)
+		
+		
+	ifrm.find("tr.option1 input:radio[name='hot_cold']").click(function(){
+		hotCold = $(this).val();
 	});
-
-	size.click(function(){
-		sizeP = $(this).find('span:eq(1)').attr('value');
-		alert(sizeP)
+	
+	ifrm.find("tr.size input:radio[name='size']").click(function(){
+		sizeP = Number($(this).val());
 	});
-
-	syrup.click(function(){
-		syruP = $(this).find('span:eq(1)').attr('value');
-		alert(syruP)
+	
+	ifrm.find("tr.option2 input:radio[name='syrup']").click(function(){
+		syruP = Number($(this).val());
 	});
-
-	shot.click(function(){
-		shotP = $(this).find('span:eq(1)').attr('value');
-		alert(shotP)
+	
+	ifrm.find("tr.option3 input:radio[name='shot']").click(function(){
+		shotP = Number($(this).val());
 	});
+		
+	let addedP = oriPrice + sizeP + syruP + shotP;
+	let Fname = name + "(" + hotCold + ")";
+	
+	let total = Number($('totallist > td').text());
+	
+	ifrm.find("#damgi").click(function(){
+		
+		for (let i=0 ; i<15 ; i++) {
+			if($('tr.list:eq(' + i + ') > td:eq(0)').text() != '') {
+			} else {
+				$('tr.list:eq(' + i + ') > td:eq(0)').text(Fname);
+				// $('tr.list:eq(' + i + ') > td:eq(1)').append
+				// $('tr.list:eq(' + i + ') > td:eq(2)').append()
+				
+				$('#totallist > td').html(Number(total) + Number(addedP));
+				break;
+			}
+			
+			$('#here').hide();
+			
+			$("tr.option1 input:radio[name='hot_cold']:eq(0)").attr("checked", true);
+			$("tr.size input:radio[name='size']:eq(1)").attr("checked", true);
+			$("tr.option1 input:radio[name='hot_cold']:eq(0)").attr("checked", true);
+			$("tr.option1 input:radio[name='hot_cold']:eq(0)").attr("checked", true);
+			
+		}
+		
+		
+		/*
+		alert(oriPrice);
+		alert(name);
+		alert(hotCold);
+		alert(sizeP);
+		alert(syruP);
+		alert(shotP);
+		*/
+		
+	});
+		
 
-
-
+	
+	
+	
 });

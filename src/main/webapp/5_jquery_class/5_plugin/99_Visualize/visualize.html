@@ -3,7 +3,31 @@
 <head>
 <meta charset="UTF-8" />
 <title>Visualize</title>
-<script type="text/javascript"  src=""></script>
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="./css/visualize.css">
+<link rel="stylesheet" type="text/css" href="./css/visualize-light.css">
+
+<!-- jQuery -->
+<script type="text/javascript" src='../../lib/jquery-3.6.1.min.js'></script>
+
+<!-- 플러그인 -->
+<script type="text/javascript" src='./js/visualize.jQuery.js'></script>
+
+<!-- 사용자 코드 -->
+<script type="text/javascript">
+
+$(function(){
+	$('#data').visualize({ type : 'bar' });
+	$('#data').visualize({ type : 'pie' });
+	$('#data').visualize({ type : 'area' });
+	$('#data').visualize({ type : 'line' });
+});
+
+// 구글 차트 추천
+// 다른 차트도 많음, 잘 찾아봐서 사용하길 바람
+
+</script>
 
 </head>
 <body>

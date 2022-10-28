@@ -1,3 +1,5 @@
+
+
 $(function(){
   $('#banner_wrap').bxSlider({
     mode: 'fade',
