@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>CAFE</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script type="text/javascript" src='../lib/jquery-3.6.1.min.js'></script>
+	<script type="text/javascript" src='jav.js'></script>
+
+</head>
+
+<body>
+
+
+	<div id="leftdiv">
+		<table class="menutbl">
+			<tr id="menutitle">
+				<th colspan=3 id="titleText">M E N U</th>
+			</tr>
+			<tr class="menus">
+				<td id='menu1' class='menu'>
+					<img src="./images/아메리카노.png" /> <br />
+					<span id="label1" value='아메리카노'>아메리카노</span><br />
+					<span id="price1" value='1000'>1000</span>원<br />
+				</td>
+				<td id='menu2' class='menu'>
+					<img src="./images/카페라떼.png" /> <br />
+					<span id="label2" value='카페라떼'>카페라떼</span><br />
+					<span id="price2" value='2000'>2000</span>원<br />
+				</td>
+				<td id='menu3' class='menu'>
+					<img src="./images/콜드브루.png" /> <br />
+					<span id="label3" value='콜드브루'>콜드브루</span><br />
+					<span id="price3" value='3000'>3000</span>원<br />
+				</td>
+
+			</tr>
+			<tr class="menus">
+				<td id='menu4' class='menu'>
+					<img src="./images/로얄밀크티.png" /> <br />
+					<span id="label4" value='로얄밀크티'>로얄밀크티</span><br />
+					<span id="price4" value='2000'>2000</span>원<br />
+				</td>
+				<td id='menu5' class='menu'>
+					<img src="./images/얼그레이.png" /> <br />
+					<span id="label5" value='얼그레이'>얼그레이</span><br />
+					<span id="price5" value='1000'>1000</span>원<br />
+				</td>
+				<td id='menu6' class='menu'>
+					<img src="./images/페퍼민트.png" /> <br />
+					<span id="label6" value='페퍼민트'>페퍼민트</span><br />
+					<span id="price6" value='1500'>1500</span>원 <br />
+				</td>
+			</tr>
+			<tr class="menus">
+				<td id='menu7' class='menu'>
+					<img src="./images/고구마라떼.png" /> <br />
+					<span id="label7" value='고구마라떼'>고구마라떼</span><br />
+					<span id="price7" value='2000'>2000</span>원 <br />
+				</td>
+				<td id='menu8' class='menu'>
+					<img src="./images/딸기요거트스무디.png" /> <br />
+					<span id="label8" value='딸기요거트스무디'>딸기요거트스무디</span><br />
+					<span id="price8" value='1000'>1000</span>원 <br />
+				</td>
+				<td id='menu9' class='menu'>
+					<img src="./images/민트초코프라페.png" /> <br />
+					<span id="label9" value='민트초코프라페'>민트초코프라페</span><br />
+					<span id="price9" value='1500'>1500</span>원 <br />
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<div id="rightdiv">
+		<table id="listTable">
+			<tr id="listtitle">
+				<th colspan=3 id="titleText">주문내역</th>
+			</tr>
+			<tr id="listtr">
+				<td width="150">목록</td>
+				<td width="100">갯수</td>
+				<td width="50">삭제</td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr height="40" class="list">
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+
+
+			<tr id="totallist">
+				<td colspan='3'>
+					0원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>
+			<tr id="orderBtn">
+				<td>
+					<input type='button' class="card" value='카드' id='btn' />
+				</td>
+				<td colspan='2'>
+					<input type='button' class="cash" value='현금' id='btn' />
+				</td>
+			</tr>
+			<tr id="cancelBtn">
+				<td colspan="3">
+					<input type='button' class="cancel" value='전체 취소' id='btn' />
+				</td>
+			</tr>
+
+		</table>
+	</div>
+
+
+	<div class="modal">
+		<div class="modal_body">
+			<table class="optiontbl">
+				<tr id="optiontitle">
+					<th colspan=4 id="opt_titleText">O P T I O N</th>
+				</tr>
+				<tr class="option1">
+					<td>HOT/COLD</td>
+					<td id='hot' class='hot/ice'>
+						<img src="./images/hot.png" /><br />
+						<span id="label1" value='따뜻한 음료'>따뜻한 음료</span><br />
+						<span name='hot_cold' value='Hot'>+0원</span>
+						<br />
+					</td>
+					<td id='ice' class='hot/ice'>
+						<img src="./images/ice.png" /> <br />
+						<span id="label2" value='차가운 음료'>차가운 음료</span><br />
+						<span name='hot_cold' value='Cold'>+0원</span>
+					</td>
+					<td></td>
+
+				<tr class="size">
+					<td>사이즈 선택</td>
+					<td id='small' class='sml'>
+						<img src="./images/s.png" /><br />
+						<span id="label4" value='samll'>small</span><br />
+						<span name='size' value='-500'>-500원</span>
+						<br />
+					</td>
+					<td id='medium' class='sml'>
+						<img src="./images/m.png" /><br />
+						<span id="label5" value='medium'>medium</span><br />
+						<span name='size' value='0'>+0원</span>
+					</td>
+					<td id='large' class='sml'>
+						<img src="./images/l.png" /><br />
+						<span id="label6" value='large'>large</span><br />
+						<span name='size' value='500'>+500원</span>
+					</td>
+				</tr>
+
+				<tr class="option2">
+					<td>시럽 추가</td>
+					<td id='vanilla' class='syrup'>
+						<img src="./images/syrup.png" /><br />
+						<span id="syrup1" value='바닐라시럽'>바닐라시럽</span><br />
+						<span name='syrup' value='300'>+300원</span>
+					</td>
+					<td id='hazelnut' class='syrup'>
+						<img src="./images/macadamia.png" /><br />
+						<span id="syrup2" value='헤이즐넛시럽'>헤이즐넛시럽</span><br />
+						<span name='syrup' value='300'>+300원</span>
+					</td>
+					<td id='none1' class='syrup'>
+						<img src="./images/none.png" /><br />
+						<span id="none1" value='추가없음'>추가없음</span><br />
+						<span name='syrup' value='0'>+0원</span>
+					</td>
+				</tr>
+
+				<tr class="option3">
+					<td>샷추가 추가</td>
+					<td id='shot' class='shot'>
+						<img src="./images/shot(1).png" /><br />
+						<span id="aShot" value='샷추가'>샷추가</span><br />
+						<span name='shot' value='400'>+400원</span>
+					</td>
+					<td id='none2' class='shot'>
+						<img src="./images/none.png" /><br />
+						<span id="noShot" value='추가없음'>추가없음</span><br />
+						<span name='shot' value='0'>+0원</span>
+					</td>
+					<td></td>
+				</tr>
+				<tr class="orderCenter">
+					<td colspan="4">
+						<label>총액:  </label><span id="priceCenter">0원</span><br />
+						<input id="damgi" type="button" value="담기">
+					</td>
+				</tr>
+				
+
+			</table>
+		</div>
+	</div>
+	<button class="btn-open-popup">Modal 띄우기</button>
+
+
+</body>
+
+</html>

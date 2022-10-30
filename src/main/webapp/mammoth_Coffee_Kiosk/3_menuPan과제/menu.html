@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>CAFE</title>
+	
+	<!-- 우리의 CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!-- 모달창에 필요한 resources -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+	<!-- 모달창에게 맞는 JQuery 버전 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	
+	<!-- 우리의 JS -->
+	<script type="text/javascript" src='jav.js'></script>
+
+</head>
+
+<body>
+
+
+	<div id="leftdiv">
+		<table class="menutbl">
+			<tr id="menutitle">
+				<th colspan=3 id="titleText">M E N U</th>
+			</tr>
+			<tr class="menus">
+				<td id='menu1' class='menu'>
+					<img src="./images/아메리카노.png" /> <br />
+					<span id="label1" value='아메리카노'>아메리카노</span><br />
+					<span id="price1" value='1400'>1400</span>원<br />
+				</td>
+				<td id='menu2' class='menu'>
+					<img src="./images/카페라떼.png" /> <br />
+					<span id="label2" value='카페라떼'>카페라떼</span><br />
+					<span id="price2" value='1900'>1900</span>원<br />
+				</td>
+				<td id='menu3' class='menu'>
+					<img src="./images/콜드브루.png" /> <br />
+					<span id="label3" value='콜드브루'>콜드브루</span><br />
+					<span id="price3" value='2300'>2300</span>원<br />
+				</td>
+
+			</tr>
+			<tr class="menus">
+				<td id='menu4' class='menu'>
+					<img src="./images/로얄밀크티.png" /> <br />
+					<span id="label4" value='로얄밀크티'>로얄밀크티</span><br />
+					<span id="price4" value='3000'>3000</span>원<br />
+				</td>
+				<td id='menu5' class='menu'>
+					<img src="./images/얼그레이.png" /> <br />
+					<span id="label5" value='얼그레이'>얼그레이</span><br />
+					<span id="price5" value='3700'>3700</span>원<br />
+				</td>
+				<td id='menu6' class='menu'>
+					<img src="./images/페퍼민트.png" /> <br />
+					<span id="label6" value='페퍼민트'>페퍼민트</span><br />
+					<span id="price6" value='3700'>3700</span>원 <br />
+				</td>
+			</tr>
+			<tr class="menus">
+				<td id='menu7' class='menu'>
+					<img src="./images/고구마라떼.png" /> <br />
+					<span id="label7" value='고구마라떼'>고구마라떼</span><br />
+					<span id="price7" value='3100'>3100</span>원 <br />
+				</td>
+				<td id='menu8' class='menu'>
+					<img src="./images/딸기요거트스무디.png" /> <br />
+					<span id="label8" value='딸기요거트스무디'>딸기요거트스무디</span><br />
+					<span id="price8" value='3900'>3900</span>원 <br />
+				</td>
+				<td id='menu9' class='menu'>
+					<img src="./images/민트초코프라페.png" /> <br />
+					<span id="label9" value='민트초코프라페'>민트초코프라페</span><br />
+					<span id="price9" value='4400'>4400</span>원 <br />
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<div id="rightdiv">
+		<table id="listTable">
+			<tr id="listtitle">
+				<th colspan=3 id="titleText">주문내역</th>
+			</tr>
+			<tr id="listtr">
+				<td width="150">목록</td>
+				<td width="100">갯수</td>
+				<td width="50">삭제</td>
+			</tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+			<tr height="40" class="list"><td></td><td></td><td></td></tr>
+
+
+			<tr id="totallist">
+				<td colspan='3'>
+					0원
+				</td>
+			</tr>
+			<tr id="orderBtn">
+				<td>
+					<input type='button' class="card" value='카드' id='btn' />
+				</td>
+				<td colspan='2'>
+					<input type='button' class="cash" value='현금' id='btn' />
+				</td>
+			</tr>
+			<tr id="cancelBtn">
+				<td colspan="3">
+					<input type='button' class="cancel" value='전체 취소' id='btn' />
+				</td>
+			</tr>
+
+		</table>
+	</div>
+
+
+<div id="modal1" class="modal">
+
+	<table class="optiontbl">
+	
+		<tr id="optiontitle">
+            <th colspan=4 id="opt_titleText">O P T I O N</th>
+        </tr>
+        
+        <tr class="option1">
+            <td >HOT/COLD</td>
+            <td id='hot' class='hot'>
+            	<img src="./images/hot.png" class='image' /><br/>
+            	<label for="Hot" value='따뜻한 음료'>따뜻한 음료</label><br/>
+            	<input type='radio' id='Hot' name='hot_cold' value='Hot' checked="checked">+0원<br/>
+            </td>
+            <td id='ice' class='ice'>
+            	<img src="./images/ice.png" class='image' /><br/>
+            	<label for="Cold" value='차가운 음료'>차가운 음료</label><br/>
+            	<input type='radio' id='Cold' name='hot_cold' value='Cold'>+0원
+            </td>
+        	<td></td>
+        </tr>
+		
+		<tr class="size">
+			<td>사이즈 선택</td>
+			<td>
+				<img src="./images/s.png" class='image' /><br/>
+		        <label for="small" value='small'>Small</label><br/>
+		        <input type='radio' id='small' name='size' value='-500'>-500원
+		    </td>
+			<td>
+				<img src="./images/m.png" class='image' /><br/>
+		        <label for="medium" value='medium'>Medium</label><br/>
+		        <input type='radio' id='medium' name='size' value='0' checked="checked">+0원
+			</td>
+			<td>
+				<img src="./images/l.png" class='image' /><br/>
+				<label for="large" value='large'>Large</label><br/>
+		        <input type='radio' id='large' name='size' value='500'>+500원
+       		</td>
+        </tr>
+        
+        <tr class="option2">
+            <td>시럽 추가</td>
+            <td>
+            	<img src="./images/syrup.png" class='image' /><br/>
+            	<label for="vanilla" value='바닐라시럽'>바닐라 시럽</label><br/>
+            	<input type='radio' id="vanilla" name='syrup' value='300'>+300원
+            </td>
+            <td>
+            	<img src="./images/macadamia.png" class='image' /><br/>
+            	<label for="hazelnut" value='헤이즐넛시럽'>헤이즐넛 시럽</label><br/>
+            	<input type='radio' id="hazelnut" name='syrup' value='300'>+300원
+            </td>
+            <td>
+            	<img src="./images/none.png" class='image' /><br/>
+            	<label for="noSyrup" value='추가없음'>추가 없음</label><br/>
+            	<input type='radio' id="noSyrup" name='syrup' value='0' checked="checked">+0원
+            </td>
+        </tr>
+        
+        <tr class="option3">
+            <td>샷추가 추가</td>
+            <td>
+            	<img src="./images/shot(1).png" class='image' /><br/>
+            	<label for="aShot" value='샷추가'>샷 추가</label><br/>
+            	<input type='radio' id='aShot' name='shot' value='400'>+400원
+            </td>
+            <td>
+            	<img src="./images/none.png" class='image' /><br/>
+             	<label for="noShot" value='추가없음'>추가 없음</label><br/>
+             	<input type='radio' id='noShot' name='shot' value='0' checked="checked">+0원
+            </td>
+            <td></td>
+        </tr>
+        
+        <tr class="orderCenter">
+			<td colspan="4">
+			    <span id="drinkName"></span><br/>
+				총액:<span id="priceCenter">0</span>원<br/>
+				<input id="damgi" type="button" value="담기">
+			</td>
+		</tr>
+        
+        <tr>
+        	<td colspan=4>
+        		<button>Check1</button>
+        		<button>Check2</button>
+        		<button>Check3</button>
+        		<button>Check4</button>
+      			<button>Reset</button>
+        	</td>
+      	</tr>
+      
+	</table>
+	
+</div>
+ 
+<p><a href="#modal1" rel="modal:open">모달창띄우기</a></p>
+
+
+</body>
+
+</html>

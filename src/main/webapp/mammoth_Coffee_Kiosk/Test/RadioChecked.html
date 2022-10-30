@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>RadioChecked</title>
+
+<script type="text/javascript" src='../lib/jquery-3.6.1.min.js'></script>
+<script type="text/javascript">
+
+	$(function(){
+		
+		$('button').click(function() {
+		    var value = $("input[type=radio][name=contact]:checked").val();
+		    if (value)
+		      alert(value);
+		    else alert('Nothing is selected');
+		})
+		
+		/*
+		$('button').click(function() {
+			$("input[type=radio][name=contact]").prop('checked', false);
+		})
+		*/
+		
+	});
+
+</script>
+
+</head>
+<body>
+
+<div id="container">
+      <p>Select your preferred contact method:</p>
+      <div>
+        <input type="radio" id="email" name="contact" value="email">
+        <label for="email">Email</label>
+
+        <input type="radio" id="phone" name="contact" value="phone">
+        <label for="phone">Phone</label>
+
+        <input type="radio" id="mail" name="contact" value="mail">
+        <label for="mail">Mail</label>
+      </div>
+      <button>Submit</button>
+    </div>
+
+</body>
+</html>

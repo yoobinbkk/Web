@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>ModalRadio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+<script type="text/javascript">
+
+	$(function(){
+		
+		$('button:eq(0)').click(function() {
+		    var value = $("input[type=radio][name=size]:checked").val();
+		    if (value)
+		      alert(value);
+		    else alert('Nothing is selected');
+		})
+		
+		
+		$('button:eq(1)').click(function() {
+			$("input[type=radio][name=size]").prop('checked', false);
+			$("input#medium").prop('checked', true);
+		})
+		
+		
+	});
+
+</script>
+
+</head>
+<body>
+
+<div id="ex1" class="modal">
+
+<p>Select your preferred size:</p>
+
+	<table class="optiontbl">
+	
+		<tr id="optiontitle">
+            <th colspan=4 id="opt_titleText">O P T I O N</th>
+        </tr>
+		
+		<tr class="size">
+			<td>사이즈 선택</td>
+			<td>
+				<img src="./images/s.png" class='image' /><br/>
+		        <label for="small" value='small'>Small</label><br/>
+		        <input type='radio' id='small' name='size' value='-500'>-500원
+		    </td>
+			<td>
+				<img src="./images/m.png" class='image' /><br/>
+		        <label for="medium" value='medium'>Medium</label><br/>
+		        <input type='radio' id='medium' name='size' value='0' checked="checked">+0원
+			</td>
+			<td>
+				<img src="./images/l.png" class='image' /><br/>
+				<label for="large" value='large'>Large</label><br/>
+		        <input type='radio' id='large' name='size' value='500'>+500원
+       		</td>
+        </tr>
+        <tr>
+        	<td colspan=4>
+        		<button>Submit</button>
+      			<button>Reset</button>
+        	</td>
+      	</tr>
+      
+      </table>
+
+</div>
+ 
+<p><a href="#ex1" rel="modal:open">모달창띄우기</a></p>
+
+</body>
+</html>

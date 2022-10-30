@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>ModalRadio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+<script type="text/javascript">
+
+	$(function(){
+		
+		let check1 = $('table.optiontbl button:nth-child(1)');
+		let check2 = $('table.optiontbl button:nth-child(2)');
+		let check3 = $('table.optiontbl button:nth-child(3)');
+		let check4 = $('table.optiontbl button:nth-child(4)');
+		
+		check1.click(function() {
+		    var value = $("input:radio[name=hot_cold]:checked").val();
+		      alert(value);
+		});
+		
+		check2.click(function() {
+		    var value = $("input:radio[name=size]:checked").val();
+		      alert(value);
+		});
+		
+		check3.click(function() {
+		    var value = $("input:radio[name=syrup]:checked").val();
+		      alert(value);
+		});
+		
+		check4.click(function() {
+		    var value = $("input:radio[name=shot]:checked").val();
+		      alert(value);
+		});
+		
+		function reset(){
+			$("table.optiontbl input:radio").prop('checked', false);
+			$("input#medium").prop('checked', true);
+			$("input#Hot").prop('checked', true);
+			$("input#noSyrup").prop('checked', true);
+			$("input#noShot").prop('checked', true);
+		}
+		
+		$('table.optiontbl button:nth-child(5)').click(function() {
+			reset();
+		})
+		
+		
+		// 주문내역에 넣을 변수
+		var optionTotal = Number(opt2) + Number(opt3) + Number(opt4);
+		var drinkName = "(" + opt1 + ")";
+		
+		$('#damgi').click(function() {
+			alert(drinkName + " " + optionTotal);
+		})
+		
+	});
+
+</script>
+
+</head>
+<body>
+
+<div id="modal1" class="modal">
+
+	<table class="optiontbl">
+	
+		<tr id="optiontitle">
+            <th colspan=4 id="opt_titleText">O P T I O N</th>
+        </tr>
+        
+        <tr class="option1">
+            <td >HOT/COLD</td>
+            <td id='hot' class='hot'>
+            	<img src="./images/hot.png" class='image' /><br/>
+            	<label for="Hot" value='따뜻한 음료'>따뜻한 음료</label><br/>
+            	<input type='radio' id='Hot' name='hot_cold' value='Hot' checked="checked">+0원<br/>
+            </td>
+            <td id='ice' class='ice'>
+            	<img src="./images/ice.png" class='image' /><br/>
+            	<label for="Cold" value='차가운 음료'>차가운 음료</label><br/>
+            	<input type='radio' id='Cold' name='hot_cold' value='Cold'>+0원
+            </td>
+        	<td></td>
+        </tr>
+		
+		<tr class="size">
+			<td>사이즈 선택</td>
+			<td>
+				<img src="./images/s.png" class='image' /><br/>
+		        <label for="small" value='small'>Small</label><br/>
+		        <input type='radio' id='small' name='size' value='-500'>-500원
+		    </td>
+			<td>
+				<img src="./images/m.png" class='image' /><br/>
+		        <label for="medium" value='medium'>Medium</label><br/>
+		        <input type='radio' id='medium' name='size' value='0' checked="checked">+0원
+			</td>
+			<td>
+				<img src="./images/l.png" class='image' /><br/>
+				<label for="large" value='large'>Large</label><br/>
+		        <input type='radio' id='large' name='size' value='500'>+500원
+       		</td>
+        </tr>
+        
+        <tr class="option2">
+            <td>시럽 추가</td>
+            <td>
+            	<img src="./images/syrup.png" class='image' /><br/>
+            	<label for="vanilla" value='바닐라시럽'>바닐라 시럽</label><br/>
+            	<input type='radio' id="vanilla" name='syrup' value='300'>+300원
+            </td>
+            <td>
+            	<img src="./images/macadamia.png" class='image' /><br/>
+            	<label for="hazelnut" value='헤이즐넛시럽'>헤이즐넛 시럽</label><br/>
+            	<input type='radio' id="hazelnut" name='syrup' value='300'>+300원
+            </td>
+            <td>
+            	<img src="./images/none.png" class='image' /><br/>
+            	<label for="noSyrup" value='추가없음'>추가 없음</label><br/>
+            	<input type='radio' id="noSyrup" name='syrup' value='0' checked="checked">+0원
+            </td>
+        </tr>
+        
+        <tr class="option3">
+            <td>샷추가 추가</td>
+            <td>
+            	<img src="./images/shot(1).png" class='image' /><br/>
+            	<label for="aShot" value='샷추가'>샷 추가</label><br/>
+            	<input type='radio' id='aShot' name='shot' value='400'>+400원
+            </td>
+            <td>
+            	<img src="./images/none.png" class='image' /><br/>
+             	<label for="noShot" value='추가없음'>추가 없음</label><br/>
+             	<input type='radio' id='noShot' name='shot' value='0' checked="checked">+0원
+            </td>
+            <td></td>
+        </tr>
+        
+        <tr class="orderCenter">
+			<td colspan="4">
+			    <span id="drinkName"></span><br/>
+				총액:<span id="priceCenter">0</span>원<br/>
+				<input id="damgi" type="button" value="담기">
+			</td>
+		</tr>
+        
+        <tr>
+        	<td colspan=4>
+        		<button>Check1</button>
+        		<button>Check2</button>
+        		<button>Check3</button>
+        		<button>Check4</button>
+      			<button>Reset</button>
+        	</td>
+      	</tr>
+      
+      </table>
+
+</div>
+ 
+<p><a href="#modal1" rel="modal:open">모달창띄우기</a></p>
+
+</body>
+</html>
